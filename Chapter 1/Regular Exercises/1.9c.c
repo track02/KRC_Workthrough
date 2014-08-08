@@ -14,8 +14,6 @@ main(){
 	char line[MAXLINE];	//Current input
 	char longest[MAXLINE]; //Longest line saved here
 
-	max = 0;
-
 	/*While there are lines to read, compare to max and store largest */
 	while((len = getline(line, MAXLINE)) > 0)
 			copy(longest, line);			
@@ -66,7 +64,6 @@ int getline(char s[], int lim){
 		
 	}
 
-	//Cap string with null character and return
 	s[i] = '\0';
 	return i;
 

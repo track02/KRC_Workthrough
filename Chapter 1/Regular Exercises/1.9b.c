@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #define MAXLINE 1000  
+#define LINECOUNT 10
 
 //Function prototypes
 int getline(char line[], int maxline);
@@ -19,7 +20,7 @@ main(){
 
 	/*While there are lines to read, compare to max and store largest */
 	while((len = getline(line, MAXLINE)) > 0)
-		if(len > 80){
+		if(len > LINECOUNT){
 			copy(longest, line);
 			printf("Length: %d\n", len);
 			printf("%s", longest);
