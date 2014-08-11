@@ -49,11 +49,9 @@
 	
 	space = 0;
 	a = 0;
-	
-	
-	column = 1;
-	
-	
+		
+	column = 0;
+		
 	for(i = 0; i < len; ++i){		
 	
 		if(inLine[i] == ' '){
@@ -86,18 +84,18 @@
 					space = space - stopdist;
 					++a;
 					column = TABSTOP;		
-					printf("Tab\n");
+					printf("Tab Space:%d \n", space);
 				}
 				else{
 					formatLine[a] = ' ';
 					++a;
 					space = space - 1;
 					++column;			
-					printf("Space\n");
+					printf("Space, Space:%d\n", space);
 				}
 			
 				if(column == TABSTOP)
-					column = 1;
+					column = 0;
 			
 			
 			}
@@ -113,7 +111,7 @@
 		}
 		
 		if(column == TABSTOP)
-			column = 1;
+			column = 0;
 		
 		
 
