@@ -75,7 +75,7 @@
 			
 			
 				//Distance to next tab stop
-				stopdist = (TABSTOP - column);
+				stopdist = (TABSTOP - column + 1);
 
 				printf("Stop Dist %d\n", stopdist);
 				
