@@ -32,7 +32,7 @@
 	for(a = i = 0; i < lineLength - 1 && (c = getchar()) != EOF; ++i)
 	{	
 
-		if(c == ' '|| c == '\n'){
+		if(c == ' '|| c == '\n' || c == '\t'){
 			blank = a;
 			
 		}
