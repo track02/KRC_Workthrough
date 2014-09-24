@@ -19,6 +19,7 @@ int readText(char inText[], int textLimit){
 	//Array flags
 	int c, i, a;	
 	
+	//Store input - handle comment removal in separate function
 	for(a = i = 0; i < textLimit - 1 && (c = getchar()) != EOF; ++i){	
 		
 			inText[a] = c;
@@ -34,12 +35,14 @@ void stripComments(char inText[], char outText[], int size){
 
 	int c, i, a;
 	
+	//Flag if inside a string, char or comment
 	int inComment = 0;
 	int inString = 0;
 	int inChar = 0;
 
 	for(c= a = i = 0; i < size - 1; ++i){
 	
+		//Check for "", inside string so copy over all characters within including / *
 		if(inText[a] == '\"'){
 			if(inString == 0)
 				inString = 1;
@@ -47,6 +50,7 @@ void stripComments(char inText[], char outText[], int size){
 				inString = 0;						
 		}
 	
+		//Check for '', inside characters so copy over all characters within
 		if(inText[a] == '\''){
 			if(inChar == 0)
 				inChar = 1;
@@ -55,7 +59,8 @@ void stripComments(char inText[], char outText[], int size){
 		}
 		
 	
-		if(inText[a] == '/' && inString == 0){
+		
+		if(inText[a] == '/' && inString == 0 && inChar == 0){
 		
 			if(inText[a+1] == '*'){
 				
@@ -64,7 +69,7 @@ void stripComments(char inText[], char outText[], int size){
 		}
 		
 		
-		if(inText[a] == '*' && inString == 0){
+		if(inText[a] == '*' && inString == 0 && inChar == 0){
 		
 			if(inText[a+1] == '/'){
 			
