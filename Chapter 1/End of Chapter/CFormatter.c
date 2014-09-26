@@ -44,7 +44,7 @@ void stripComments(char inText[], char outText[], int size){
 	
 		//Check for "", inside string so copy over all characters within including / *
 		if(inText[a] == '\"'){
-			if(inString == 0 && inComment = 0)
+			if(inString == 0 && inComment == 0)
 				inString = 1;
 			else
 				inString = 0;						
@@ -52,7 +52,7 @@ void stripComments(char inText[], char outText[], int size){
 	
 		//Check for '', inside characters so copy over all characters within
 		if(inText[a] == '\''){
-			if(inChar == 0 && inComment = 0)
+			if(inChar == 0 && inComment == 0)
 				inChar = 1;
 			else
 				inChar = 0;		
