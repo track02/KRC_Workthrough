@@ -61,14 +61,11 @@ int htoi(char s[], int lim){
 	{			
 	
 		//Range for digits 0 - 9 -> 48 - 57
-		if(s[i] >= 48 && s[i] <= 56){
-			result += (s[i] - 48) * pow(16, count);
-			++count;
-		}
-		if(s[i] >= 65 && s[i] <= 70){
-			result += ((s[i] - 55) * pow(16, count));
-			++count;	
-		}
+		if(s[i] >= 48 && s[i] <= 56)
+			result += (s[i] - 48) * pow(16, count++);
+		if(s[i] >= 65 && s[i] <= 70)
+			result += (s[i] - 55) * pow(16, count++);
+		
 	}
 	
 	return result;
