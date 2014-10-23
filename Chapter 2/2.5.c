@@ -1,5 +1,7 @@
-#include <stdio.h>
+//Write a program to return the first location in the string s1 where any character in s2 occurs
+// S1: abcdefg S2:bcd -> Return 1
 
+#include <stdio.h>
 #define MAXSIZE 20
 
 //Prototypes
