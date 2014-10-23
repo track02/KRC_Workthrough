@@ -3,19 +3,21 @@
 #define MAXSIZE 20
 
 //Prototypes
-void squeeze(char s1[], char s2[]);
+int any(char s1[], char s2[]);
 
 main(){
 
 	char s1[] = "abcdefghijklmnopqrstuvwxyz";
-	char s2[] = "ahjk";
+	char s2[] = "&"; // Return -1
+	char s3[] = "a"; // Return 0
 
-	squeeze(s1, s2);
+	printf("Index of %s: %d", s2, any(s1, s2));
+	printf("\nIndex of %s: %d", s3, any(s1, s3));
 }
 
-void squeeze(char s1[], char s2[]){
+int any(char s1[], char s2[]){
 
-	int i =0, j = 0, k = 0, c = 0;
+	int i =0, j = 0;
 
 	char s3[MAXSIZE];
 
@@ -23,21 +25,15 @@ void squeeze(char s1[], char s2[]){
 	while (s1[i] != '\0'){
 
 		j = 0;
-		c = 0;
 		
 		//Loop through S1 and delete any instances of current character in S2
 		while(s2[j] != '\0'){
 		
 			if(s1[i] == s2[j++])
-				c = 1;							
+				return i;					
 		}
 				
-		if(c != 1)
-			s3[k++] = s1[i++];
-		else
-			i++;
-	}
-	
-	printf(s3);
-
+		i++;
+	}	
+	return -1;
 }
