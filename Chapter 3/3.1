@@ -1,0 +1,136 @@
+#include <stdio.h>
+
+int binsearch(int x, int v[], int n);
+
+int binsearch_onecomp(int x, int v[], int n);
+
+
+void main(char args[]){
+
+
+	int v[] = {1,2,3,4,5,6,7,8,9};
+	int x = 5;
+	int n = 9;
+
+	//printf("%d", binsearch(x,v,n));
+	printf("%d", binsearch_onecomp(x,v,n));
+
+
+}
+
+
+//x is value to search for, v is search space (sorted array) and n in size of array
+int binsearch(int x, int v[], int n){
+
+	//Mid is the index between high / low - middle of search space
+	int low, high, mid;
+		
+	//Set start and end indexes of search space (start to end of array)
+	low = 0;
+	high = n -1;
+		
+	//Search until indexes cross	
+	while(low <= high){
+	
+		//Calculate new mid at each attempt
+		mid = (low + high) /2;
+	
+		if(x < v[mid]) //If x is before midpoint, halve search space to values before midpoint
+			high = mid - 1;
+		else if (x > v[mid]) //If x is after midpoint, halve search space to values after midpoint
+			low = mid + 1;
+		else //Otherwise value is found
+			return mid;
+	}
+
+	//Nothing found
+	return -1;
+
+}
+
+//Binary search with a single loop comparison
+int binsearch_onecomp(int x, int v[], int n){
+
+	//Start, End and Midpoint indexes
+	int low, high, mid;
+	
+	//Start of array
+	low = 0;
+	
+	//End of array
+	high = n - 1;
+
+	//Search until indexes meet	
+	while(low < high){
+			
+		//Calculate new mid at each attempt
+		mid = (low + high) /2;
+	
+		//If x is past the midpoint move lower index up past midpoint
+		if(x > v[mid])
+			low = mid + 1;
+		else //Otherwise move higher index to midpoint
+			high = mid;
+
+	}
+	
+	//Found if high and low are pointing to same index
+	if((high == low) && (v[low] == x))
+		return low;
+	else
+		return -1;
+
+}
+
+
+//v =  1 2 3 4 5
+//x = 3
+
+// L   m   H 
+// 1 2 3 4 5
+
+
+//L  m  H
+//1  2  3
+//3 !> 3 move H to midpoint
+
+// L
+// H
+// 3
+//3 > 2 Move L to midpoint + 1
+//L and H now equal
+
+//v = 1 2 3 4 5
+//x = 2
+
+//L   m   H
+//1 2 3 4 5
+
+//L m H
+//1 2 3
+//2 !> 3 move H to midpoint
+
+//L H
+//1 2
+//2 > 1 move L to m + 1
+
+//L
+//H
+//2
+
+
+//v = 1 2 3 4 5
+//x = 4
+
+//L   m   H
+//1 2 3 4 5
+//4 > 3 move L up to m +1
+
+//L H
+//4 5
+//4 !> 5 move H to m
+
+//L
+//H
+//4
+
