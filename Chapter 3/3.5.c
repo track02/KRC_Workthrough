@@ -6,7 +6,6 @@ void itob(int n, char s[], int b);
 void reverse(char s[]);
 
 
-
 void main(char args[]){
 
 	char s1[MAXSIZE];
