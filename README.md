@@ -4,5 +4,10 @@ WIP - Exercise Solutions for Kernighan & Ritchie The C Programming Language
 
 
 TODO:
-- Rename exercises
-- Complete Chp2
+- Chapter 4 - commit exercises
+
+DONE:
+
+- Chapter 1
+- Chapter 2
+- Chapter 3
