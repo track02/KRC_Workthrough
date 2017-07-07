@@ -1,7 +1,7 @@
 KR-C-Exercises
 ==============
 
-Exercise Solutions for Kernighan & Ritchie The C Programming Language
+Exercise Solutions for The C Programming Language.
 
 TODO:
 
