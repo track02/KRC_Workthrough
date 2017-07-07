@@ -1,13 +1,9 @@
 KR-C-Exercises
 ==============
-WIP - Exercise Solutions for Kernighan & Ritchie The C Programming Language
 
+Exercise Solutions for Kernighan & Ritchie The C Programming Language
 
 TODO:
-- Chapter 4 - commit exercises
 
-DONE:
-
-- Chapter 1
-- Chapter 2
-- Chapter 3
+- Cleanup existing exercises / rewrite into readable & commented form.
+- Contine where left off.
