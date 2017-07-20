@@ -1,11 +1,9 @@
 #include <stdio.h>
+#define MAXLINE 1000 //Max input line size
+#define MINCHAR 10 //Min no. chars to print line
 
 //Ex 1.17 - Write a program to print out lines 80 (N) characters or more
 //Counting /0 and /n
-
-#include <stdio.h>
-#define MAXLINE 1000 //Max input line size
-#define MINCHAR 10 //Min no. chars to print line
 
 //Declarations
 int readline(char line[], int maxline);
